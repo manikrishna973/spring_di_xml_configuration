@@ -6,5 +6,6 @@ Demo for configuring DI by legacy xml configuration file
     <li>constructor injection</li>
     <li>setter injection</li>
 </ul>
-
+   <P>Injecting literals from config file</P>
+    <P>Injecting literals from properties file by loading(properties file) into config file</P>
 <p>dependency=helper object</p>

@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandomFortuneService implements FortuneService {
 
 	private Random random = new Random();
-	String[] fortuneData= {"Your Lucky Day", "Learns spring framework","can earn more money today"};
+	String[] fortuneData= {"Your Lucky Day", "unexpected things happen","possibities of earning more money today"};
 	
 	
 	

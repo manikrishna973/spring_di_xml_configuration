@@ -8,4 +8,5 @@ Demo for configuring DI by legacy xml configuration file
 </ul>
    <P>Injecting literals from config file</P>
     <P>Injecting literals from properties file by loading(properties file) into config file</P>
+   <p> Implementations can be switched very easily</p>
 <p>dependency=helper object</p>

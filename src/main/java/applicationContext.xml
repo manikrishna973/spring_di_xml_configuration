@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    
+    
+    
+    <!-- Load the properties file : cricketapp.properties -->
+    <context:property-placeholder location="classpath:cricketapp.properties"/>
+
+	<!-- Define your beans here -->
+
+	<!-- define the dependency -->
+	<bean id="myFortuneService"
+		class="com.mani.spring_ioc_xml_configuration.RandomFortuneServiceImplPracticeActivity">
+	</bean>
+
+	<!-- <bean id="myCoach" class="com.mani.spring_ioc_xml_configuration.TrackCoachs.BaseballCoach"> 
+		</bean> -->
+
+	<bean id="myCoach"
+		class="com.mani.spring_ioc_xml_configuration.TableTennis">
+		<!-- set up constructor injection -->
+		<constructor-arg ref="myFortuneService" />
+	</bean>
+
+	<bean id="theSchool"
+		class="com.mani.spring_ioc_xml_configuration.SchoolServiceImpl">
+		<!-- set up multiple arg constructor injection -->
+		<constructor-arg ref="myFortuneService" />
+		<constructor-arg ref="myCoach" />
+	</bean>
+
+	<bean id="myCricketCoach"
+		class="com.mani.spring_ioc_xml_configuration.CricketCoach">
+				<!-- set up setter injection -->
+		<property name="fortuneService" ref="myFortuneService"></property>
+		
+		<!-- Inject Literal values -->
+		
+		<!--
+		<property name="emailAddress" value="mani@gmail.com"/>
+		<property name="team" value="india"/>
+		
+		-->
+		<!-- Injecting Values from  Properties file  -->
+		<property name="emailAddress" value="${foo.email}"/>
+		<property name="team" value="${foo.team}"/>
+	</bean>
+
+</beans>
+
+
+
+
+
